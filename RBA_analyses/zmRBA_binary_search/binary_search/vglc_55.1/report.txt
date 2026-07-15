@@ -1,0 +1,5 @@
+stat	optimal
+vglc	55.1
+proteome_capacity	0.9999999999999999
+ribo_capacity	0.38352491977762976
+growth_rate	0.36007626056671144

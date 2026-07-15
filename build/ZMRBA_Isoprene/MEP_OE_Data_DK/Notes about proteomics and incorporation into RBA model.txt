@@ -1,0 +1,14 @@
+NOTE ABOUT MEP OE PROTEOMICS DATA:
+-The proteomics data is in LFQ values which is used when comparing a protein's levels acorss samples NOT wihtin a sample to the whole proteome (iBAQ values for this)
+- Because of this can't really do much with these proteomics values and the quantitative proteomics data (also the MEP OE proteomics are older so the coverage is worse than what you see with the quantitative proteomics data from Daven)
+
+-To model the OE of proteins in the model, just doing it based off of the log2 fold change (was based on PRL814 EV) see in Figure S1 of "Systematic Analysis of Metabolic Bottlenecks in the Methylerythritol 4-Phosphate (MEP) Pathway of Zymomonas mobilis"
+  **Have no reference for amount of protein for IspS so will just let the model choose
+
+	DXS2: 6.41 
+	DXR: 6.52
+	IspDF: 5.01
+	IspE: 5.42
+	IspG: 5.53
+	IspH: 2.32
+	DXS2_IspS: 6.64 (DXS2)

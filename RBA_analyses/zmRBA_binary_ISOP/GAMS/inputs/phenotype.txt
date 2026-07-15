@@ -1,0 +1,55 @@
+* Parameters define in this file will overwrite ones define in GAMS runRBA.gms file
+
+v.fx('BIOSYN-BIODIL') = %mu% * %nscale%;
+
+* NGAM
+v.fx('RXN-ATPM_FWD-UNKNOWN') = 3.6335 * %nscale%;
+
+* Substrate uptake limit.
+v.fx('RXN-EX_glc_e_REV-SPONT') = %vglc% * %nscale%;
+v.fx('RXN-EX_glc_e_FWD-SPONT') = 0.0 * %nscale%;
+
+
+*v.fx('RXN-MALTATr_FWD-ZMO1806')	= 0.0 * %nscale%;
+*v.fx('RXN-MALTATr_REV-ZMO1806')	= 0.0 * %nscale%;
+
+* Anaerobic conditions
+* Experimental evidence that RNF complex operates in biosynthetic direction (FWD) in Zymo under anaerobic conditions so will turn off the REV direction where can use red fdx/fld
+v.fx('RXN-EX_o2_e_FWD-SPONT') = 0.0 * %nscale%;
+
+v.fx('RXN-NIT1b_fld_REV-ZMOenz45') = 0.0 * %nscale%;
+v.fx('RXN-NIT1b_fdx_REV-ZMOenz45') = 0.0 * %nscale%;
+
+v.fx('RXN-RNFfld_REV-ZMOenz44') = 0.0 * %nscale%;
+v.fx('RXN-RNFfdx_REV-ZMOenz44') = 0.0 * %nscale%;
+
+*Reverse of this acts as a sink for udp_c released for biomass components 
+*v.fx('RXN-UMPK_FWD-ZMO1154') = 0.0 * %nscale%;
+
+*This is ligase that uses ATP so shouldn't go in reverse direction
+v.fx('RXN-PRAGSr_REV-ZMO0299') = 0.0 * %nscale%;
+
+*Setting to be irreversible based off MFA data
+v.fx('RXN-ALATA_L_REV-ZMO1727') = 0.0 * %nscale%;
+v.fx('RXN-ASPTA_FWD-ZMO0342') = 0.0 * %nscale%;	
+v.fx('RXN-SUCOAS_REV-ZMOenz17') = 0.0 * %nscale%;	
+
+
+* turn off lactate production
+v.fx('RXN-EX_lac__D_e_FWD-SPONT')= 0.0 * %nscale%;
+
+
+
+*v.fx('RXN-RNFfdx_FWD-ZMOenz44') = 0.0 * %nscale%;
+*v.fx('RXN-RNFfld_FWD-ZMOenz44') = 0.0 * %nscale%;
+
+*v.fx('RXN-FNOR_REV-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FNOR_REV-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FLDR2_REV-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FLDR2_FWD-ZMO1753') = 0.0 * %nscale%;
+
+
+
+
+
+

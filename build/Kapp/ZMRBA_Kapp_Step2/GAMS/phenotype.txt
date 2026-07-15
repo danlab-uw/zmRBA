@@ -1,0 +1,26 @@
+* Parameters define in this file will overwrite ones define in GAMS runRBA.gms file
+
+$setGlobal mu 0.36
+v.fx('BIOSYN-BIODIL') = %mu% * %nscale% ;
+
+* NGAM
+v.fx('RXN-ATPM_FWD-UNKNOWN') = 3.6335 * %nscale%;
+
+
+* Substrate uptake limit.
+v.lo('RXN-EX_glc_e_REV-SPONT') = 46.9 * %nscale%;
+v.up('RXN-EX_glc_e_REV-SPONT') = 55.1 * %nscale%;
+v.fx('RXN-EX_glc_e_FWD-SPONT') = 0.0 * %nscale%;
+
+* Anaerobic conditions
+v.fx('RXN-EX_o2_e_FWD-SPONT') = 0.0 * %nscale%;
+
+v.fx('RXN-RNFfld_REV-ZMOenz44') = 0.0 * %nscale%;
+v.fx('RXN-RNFfdx_REV-ZMOenz44') = 0.0 * %nscale%;
+
+* turn off lactate production
+v.fx('RXN-EX_lac__D_e_FWD-SPONT')= 0.0 * %nscale%;
+
+
+
+

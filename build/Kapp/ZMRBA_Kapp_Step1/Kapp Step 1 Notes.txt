@@ -1,0 +1,15 @@
+
+Kapp Step 1: Finding flux (concentration) for one enzyme given constraints from the proteomics data
+
+- In the 'Protein_ZM.xlsx' file, the 'synthesis' flux of each protein was calculated based on the quantitative proteomics (multiply mmol/gDCW by growth rate --> vtrns (mmol/gDCW/h) 
+
+- From these rate values, need to then see what the synthesis flux for enzymes are from the protein data
+
+- If an enzyme is mapped 1:1 to it's protein then the enzyme synthesis flux (concentration) is just equal to the protein synthesis flux
+
+- When you have proteins that form homo(mers) [i.e., homodimer, homotrimer], which is assumed to be the active form the of the enzyme, then the enzyme synthesis flux (concentration) is the protein flux divided by the number of subunits making up the active enzyme 
+
+- When you have enzyme complex that are made up of multiple different proteins (hetero-mers), then the enzyme synthesis flux (concentration) is equal to the protein flux (concentration) that is the lowest/smallest (because this protein is the constraint on how much of the functional enzyme complex you can form)
+
+
+***** NOTE: THIS IS CALCULATING ENZYME SYNTHESIS FLUX - TO GET THE ENZYME CONCENTRATION WOULD NEED TO GO AND DIVIDE BT THE GROWTH RATE (0.36 IN THIS CASE) *****

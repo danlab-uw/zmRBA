@@ -1,0 +1,20 @@
+* Parameters define in this file will overwrite ones define in GAMS runRBA.gms file
+
+
+* NGAM
+v.fx('RXN-ATPM_FWD-DUMMYENZ') = 3.6335 * %nscale%;
+
+
+* Anaerobic conditions
+* Experimental evidence that RNF complex operates in biosynthetic direction (FWD) in Zymo under anaerobic conditions so will turn off the REV direction where can use red fdx/old
+v.fx('RXN-EX_o2_e_FWD-SPONT') = 0.0 * %nscale%;
+
+v.fx('RXN-RNFfld_REV-ZMOenz42') = 0.0 * %nscale%;
+v.fx('RXN-RNFfdx_REV-ZMOenz42') = 0.0 * %nscale%;
+
+* turn off lactate production
+v.fx('RXN-EX_lac__D_e_FWD-SPONT')= 0.0 * %nscale%;
+
+
+
+

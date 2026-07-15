@@ -1,0 +1,14 @@
+$setGlobal species_path ../GAMS/inputs/RBA_species.txt
+$setGlobal rxns_path ../GAMS/inputs/RBA_rxns.txt
+$setGlobal prosyn_path ../GAMS/inputs/RBA_rxns_prosyn.txt
+$setGlobal prowaste_path ../GAMS/inputs/RBA_rxns_prowaste.txt
+$setGlobal uptake_path ../GAMS/inputs/RBA_rxns_EXREV.txt
+$setGlobal media_path ../GAMS/inputs/RBA_rxns_EXREV_MEDIA.txt
+$setGlobal sij_path ../GAMS/inputs/RBA_sij.txt
+$setGlobal prolen_path ../GAMS/inputs/RBA_proteinLength.txt
+$setGlobal enz_cap_declares_path ../GAMS/inputs/RBA_enzCapacityConstraints_declares.txt
+$setGlobal enz_cap_eqns_path ../GAMS/inputs/RBA_enzCapacityConstraints_eqns.txt
+
+$setGlobal kapp_path ../GAMS/inputs/Kapp_ZM.txt
+$setGlobal phenotype_path ../GAMS/inputs/phenotype.txt
+$setGlobal proconst_path ../GAMS/inputs/RBA_proteinconstraints.txt

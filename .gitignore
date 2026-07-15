@@ -1,0 +1,33 @@
+# --- Operating system ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.sublime-*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# --- Project working directories ---
+pycore/
+
+# --- Office lock/temp files ---
+~$*
+
+# --- GAMS solver artifacts ---
+# .lst files are human-readable solver listings that regenerate on every run (~63 MB here).
+# .gdx files are the solved model results and ARE tracked.
+*.lst
+*.log

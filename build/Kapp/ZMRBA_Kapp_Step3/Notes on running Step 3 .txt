@@ -1,0 +1,3 @@
+Notes on running Step 3
+
+- From Step 2 outputs need to copy over and place 'proteome_data_set.txt', 'proteome_data.txt', 'rxns_inactive.txt' and 'min_flux_violation.flux_essentail_iactive_rxns.txt' into the parameterization folder of Step 3

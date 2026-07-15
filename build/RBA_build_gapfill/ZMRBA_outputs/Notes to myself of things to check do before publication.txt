@@ -1,0 +1,3 @@
+NOTES TO MYSELF OF THINGS TO DO/CHECK 
+
+-Need to write in the code (steps 1-3 notebook) for getting the media reactions from the gsm model (currently I just copied over old one from Jun

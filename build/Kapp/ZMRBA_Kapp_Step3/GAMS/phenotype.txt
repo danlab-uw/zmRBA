@@ -1,0 +1,40 @@
+* Parameters define in this file will overwrite ones define in GAMS runRBA.gms file
+
+$setGlobal mu 0.36
+v.fx('BIOSYN-BIODIL') = %mu% * %nscale% ;
+
+* NGAM
+v.fx('RXN-ATPM_FWD-UNKNOWN') = 3.6635 * %nscale%;
+
+* Substrate uptake limit.
+v.lo('RXN-EX_glc_e_REV-SPONT') = 46.9 * %nscale%;
+v.up('RXN-EX_glc_e_REV-SPONT') = 55.1 * %nscale%;
+v.fx('RXN-EX_glc_e_FWD-SPONT') = 0.0 * %nscale%;
+
+* Anaerobic conditions
+* Experimental evidence that RNF complex operates in biosynthetic direction (FWD) in Zymo under anaerobic conditions so will turn off the REV direction where can use red fdx/fld
+* NOTE: for calculating fluxes for Kapp, pfba always choosing FNOR/FLDR since 'cheaper' than using RNF so to find fluxes for Kapps will turn off FNOR and FLDR reactions and calculate RNF flux and vice versa to get other fluxes 
+* When doing Kapp for FNOR and FLDR just set RNF to 0 need to allow flux through both FNOR and FLDR since once is for fdx and other is fld
+
+v.fx('RXN-EX_o2_e_FWD-SPONT') = 0.0 * %nscale%;
+
+v.fx('RXN-RNFfld_REV-ZMOenz44') = 0.0 * %nscale%;
+v.fx('RXN-RNFfdx_REV-ZMOenz44') = 0.0 * %nscale%;
+
+v.fx('RXN-RNFfdx_FWD-ZMOenz44') = 0.0 * %nscale%;
+v.fx('RXN-RNFfld_FWD-ZMOenz44') = 0.0 * %nscale%;
+
+
+*v.fx('RXN-FNOR_FWD-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FNOR_REV-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FLDR2_REV-ZMO1753') = 0.0 * %nscale%;
+*v.fx('RXN-FLDR2_FWD-ZMO1753') = 0.0 * %nscale%;
+
+
+
+* turn off lactate production
+v.fx('RXN-EX_lac__D_e_FWD-SPONT')= 0.0 * %nscale%;
+
+
+
+

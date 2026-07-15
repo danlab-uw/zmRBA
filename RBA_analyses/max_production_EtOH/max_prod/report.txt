@@ -1,0 +1,7 @@
+stat	optimal
+vglc	55.1
+vprod	104.62021032606316
+yield	0.4855494556181708
+proteome_capacity	1.0
+ribo_capacity	0.3834797362352216
+growth_rate	0.36

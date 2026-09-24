@@ -1,8 +1,3 @@
-path_gams = '../../GAMS/'
-path_pycore = '../../pycore/'
-path_enz_mw = '../../application/input/GAMS_model_application/enz_mw_g_per_mmol_ZM.txt'
-path_pro_mw = '../../application/input/GAMS_model_application/pro_mw_g_per_mmol_ZM.txt'
-
 report_file = './binary_search_report.txt' # Text file recording binary search process
 mu_tol = 1e-5; # Tolerance of upper and lower bound gap to tolerance search
 maxiter = 100; # Maximum number of iteration

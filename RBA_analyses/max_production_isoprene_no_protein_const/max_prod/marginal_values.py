@@ -35,25 +35,25 @@ redox_cap_list = []
 
 # FLD RED
 df_fld_red_cap = m.data['Eq_CarrierCap_fld_red'].records
-bottlenecks_fld_red = df_fld_red_cap.sort_values(by='marginal').head().copy()
+bottlenecks_fld_red = df_fld_red_cap.sort_values(by='marginal').copy()
 bottlenecks_fld_red['Carrier'] = 'fld_red'  
 redox_cap_list.append(bottlenecks_fld_red)
 
 # FLD OX
 df_fld_ox_cap = m.data['Eq_CarrierCap_fld_ox'].records
-bottlenecks_fld_ox = df_fld_ox_cap.sort_values(by='marginal').head().copy()
+bottlenecks_fld_ox = df_fld_ox_cap.sort_values(by='marginal').copy()
 bottlenecks_fld_ox['Carrier'] = 'fld_ox'
 redox_cap_list.append(bottlenecks_fld_ox)
 
 # FDX RED
 df_fdx_red_cap = m.data['Eq_CarrierCap_fdx_red'].records
-bottlenecks_fdx_red = df_fdx_red_cap.sort_values(by='marginal').head().copy()
+bottlenecks_fdx_red = df_fdx_red_cap.sort_values(by='marginal').copy()
 bottlenecks_fdx_red['Carrier'] = 'fdx_red'
 redox_cap_list.append(bottlenecks_fdx_red)
 
 # FDX OX
 df_fdx_ox_cap = m.data['Eq_CarrierCap_fdx_ox'].records
-bottlenecks_fdx_ox = df_fdx_ox_cap.sort_values(by='marginal').head().copy()
+bottlenecks_fdx_ox = df_fdx_ox_cap.sort_values(by='marginal').copy()
 bottlenecks_fdx_ox['Carrier'] = 'fdx_ox'
 redox_cap_list.append(bottlenecks_fdx_ox)
 

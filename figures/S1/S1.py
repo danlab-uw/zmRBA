@@ -1,8 +1,12 @@
-#Isoprene molar yield vs growth rate (mu) at fixed glucose (55.1 mmol/gDCW/h)
+#Ribosome abundance vs growth rate (mu) 
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtik
 
-d = pd.read_csv("mu_sweep_results.csv").sort_values("mu")
+#To get these values vglc was set to 30, 35, 40, 45, 50, 55.1, 60, and 65 mmol/gDCW/hr and zmRBA binary search run 
+rib_prots = [1.42e-3, 1.68e-3, 1.95e-3, 2.22e-3, 2.49e-3, 2.77e-3, 3.02e-3, 3.31e-3 ]
+rib_cap = [19.606790021671716, 23.334455894967474, 27.066228018870786, 30.79971806857517, 34.53681495322886,38.352491977762976, 42.02120201249414, 45.767485099259975]
+mu = [0.18500, 0.21995, 0.25488, 0.28975, 0.32458, 0.36008, 0.39413, 0.42885]
 
 plt.rcParams.update({"font.family":"sans-serif",
     "font.sans-serif":["Arial","Helvetica","Liberation Sans","DejaVu Sans"],
@@ -11,27 +15,20 @@ plt.rcParams.update({"font.family":"sans-serif",
 
 BLUE="#2E6CA4"
 
-fig, ax = plt.subplots(figsize=(6.6,4.6))
+fig, ax = plt.subplots(figsize=(6.8,4.7))
 
-ax.plot(d.mu, d.molar_yield_pct, "-o", color=BLUE, ms=6, lw=1.8,
+ax.plot(mu, rib_prots, "-o", color=BLUE, ms=6, lw=1.8,
         markeredgecolor="white", markeredgewidth=0.6, zorder=3)
-ax.axvline(0.359, ls="--", color="0.55", lw=1.1, zorder=1)
 
-#Case 3
-ax.annotate("$\\mu$ = 0.359 h$^{-1}$\nmolar yield: 0.13%",
-            xy=(0.3585,0.131), xytext=(0.335,0.75), fontsize=10, color="0.35",
-            ha="left", arrowprops=dict(arrowstyle="->", color="0.55", lw=1.5))
-
-#5% decrease mu 15-fold increase
-ax.annotate("$\\mu$ = 0.34 h$^{-1}$\nmolar yield: 1.95%",
-            xy=(0.3405,1.948), xytext=(0.315,2.62), fontsize=10, color=BLUE,
-            ha="left", arrowprops=dict(arrowstyle="->", color=BLUE, lw=1.5))
 
 ax.set_xlabel("Growth rate (h$^{-1}$)")
-ax.set_ylabel("Isoprene molar yield (%)")
-ax.set_xlim(0.372, 0.03); ax.set_ylim(0, 3.05)
+ax.set_ylabel("Ribosomal protein abundance \n (mmol gDCW$^{-1}$)")
+ax.set_xlim(0.15, 0.45)
+ax.set_ylim(0, 3.6e-3)
 ax.spines[["top","right"]].set_visible(False)
 ax.tick_params(which="both", length=4, width=1.1)
+ax.yaxis.set_major_formatter(mtik.FuncFormatter(
+    lambda v, pos: "0" if v == 0 else rf"${v/1e-3:.1f}{{\!\times\!}}10^{{-3}}$"))
 fig.tight_layout()
 for ext in ("pdf","png","svg", "eps"):
     fig.savefig(f"FigureS1.{ext}", dpi=300, bbox_inches="tight")
